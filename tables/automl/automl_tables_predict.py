@@ -123,7 +123,7 @@ def batch_predict(project_id,
     else:    
         # Get the multiple Google Cloud Storage URIs.
         output_uris = output_path.split(",").strip()
-        output_config = {"gcs_destination": {"output_uris": output_uris}}
+        output_config = {"gcs_destination": {"output_uri_prefix": output_path}}
 
     # Query model
     response = prediction_client.batch_predict(
